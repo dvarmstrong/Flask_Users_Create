@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Read All</title>
+</head>
+<body>
+    <div class="navbar bg-primary  ">
+        <ul class="nav">
+            <li class="nav-item ">
+                <a href="/" class="nav-link text-white " title="link" >Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="/add_user" class="nav-link text-white " title="link">Add User</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-white " title="link">Link</a>
+            </li>
+        </ul>
+    </div>
+    <div class="container d-flex justify-content-center bg-secondary mt-3 ">
+        <div class="jumbotron mt-3">
+            <h1 class="display-2 text-center">Users</h1>
+        <table class="table-dark table-hover w-100  align-items-center mt-lg-5 text-center ">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for one_user in all_users %}
+                <tr>
+                    <td>{{one_user.id}}</td>
+                    <td>{{one_user.first_name}}</td>
+                    <td>{{one_user.last_name}}</td>
+                    <td>{{one_user.email}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+    
+    
+    
+</body>
+</html>
