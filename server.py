@@ -32,6 +32,37 @@ def create_user():
     return redirect('/')
 
 
+@app.route('/users/<int:num>')
+def show_user(num):
+    data ={
+        "id" : num
+    }
+
+    this_user =User.get_one(data)
+    return render_template('readOne.html', user = this_user)
+
+
+@app.route('/edit_user/<int:num>')
+def edit_user(num):
+    data ={
+        "id" : num
+    }
+    this_user =User.get_one(data)
+    return render_template('user_edit.html', user = this_user)
+
+@app.route('/update_user')
+def update_user():
+    data ={
+        "id" : request.form['id'],
+        "fname" : request.form["fname"],
+        "lname" : request.form["lname"],
+        "email" : request.form["email"]
+    }
+
+    id = User.update(data)
+    return redirect(f'/users/{id}')
+
+
 
 if __name__=='__main__':
     app.run(debug=True)

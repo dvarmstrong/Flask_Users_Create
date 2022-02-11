@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Edit User</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit User {{user.id}}</h1>
+        <a href="/">Home</a>
+        <form action="/update_user" method="POST">
+            <label for="First Name"></label>
+            <input type="text" name="fname" id="" value="{{user.first_name}}">
+            <label for="Last Name"></label>
+            <input type="text" name="lname" id="" value="{{user.last_name}}">
+            <label for="Email"></label>
+            <input type="text" name="email" id="" value="{{user.email}}">
+            <input type="hidden" name="id" id="" value="{{user.id}}">
+
+            <button type="submit">Submit</button>
+        </form>
+       
+
+    </div>
+</body>
+</html>
