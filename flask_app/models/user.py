@@ -1,5 +1,6 @@
 # import the function that will return the instance of a connection
-from mysqlconnection import connectToMySQL
+
+from flask_app.config.mysqlconnection import connectToMySQL
 
 #model the class after the user table  from our databse 
 
